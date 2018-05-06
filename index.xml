@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo tranquilpeak theme</title>
+    <link>/</link>
+    <description>Recent content on Hugo tranquilpeak theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 05 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>new_blog</title>
+      <link>/2018/05/new-blog/</link>
+      <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/05/new-blog/</guid>
+      <description>this is a normal distribution.
+hist(rnorm(10000)) </description>
+    </item>
+    
+    <item>
+      <title>(Translation) On Reading (Books)</title>
+      <link>/1/01/translation-on-reading-books/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/translation-on-reading-books/</guid>
+      <description>Reading has to be effective to be worthwhile; positive feedbacks is critical to sustain reading.
+The fact is, most of the people who read for self-improvement, are students or young professionals with under 10 years of working experience. Reading is indeed an expensive activity. (the time you spend reading, you could be hanging out with families, friends, or working on your projects). Thus, reading has a huge opportunity cost even to the motivated readers.</description>
+    </item>
+    
+    <item>
+      <title>Backpack Analysis</title>
+      <link>/1/01/backpack-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/backpack-analysis/</guid>
+      <description>The idea comes up when I forgot my classbinder. And recently I realize I don&amp;rsquo;t really use the books that I carried. So I want to log all the things that I bring when I go out.
+definition go out: leaving home/apartment for more than 1 hour.
+Objectives/Questions to reflect on: 1.do I need to carry &amp;hellip;, do I actually use &amp;hellip;? 2.how do I prepare things in advance? 3.</description>
+    </item>
+    
+    <item>
+      <title>Backpack Analysis(2)-Reflection</title>
+      <link>/1/01/backpack-analysis2-reflection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/backpack-analysis2-reflection/</guid>
+      <description>01/30/2017
+This is the second morning which I stopped logging my backpack items, and I forgot to bring my binders.I think one of the main benefits of doing so ensures I always have a pencil and pen inside my backpack.
+Today is 02/21/2017
+I am restoring the long abandoned backpack Analysis. The main goal is to avoid missing things when I need them.</description>
+    </item>
+    
+    <item>
+      <title>Classes Reflections</title>
+      <link>/1/01/classes-reflections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/classes-reflections/</guid>
+      <description>Overview This semester is pretty tough! At the beginning I remember I have a mental breakdown almost every week tyring to finish my never ending homework and midterms. At first I really have to crticize myself for having no idea what I am getting into this semester: weak previews. I have underestimated the amount of work I have to do for each class. For the classes I take next semester, I want to at least have a brief overview of what is ahead of me.</description>
+    </item>
+    
+    <item>
+      <title>Data Analysis Workflow Guide</title>
+      <link>/1/01/data-analysis-workflow-guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/data-analysis-workflow-guide/</guid>
+      <description>Introduction I have compiled a list of good data analysis workflow tips from Professor Roger Peng&amp;rsquo;s Analytic Mind, ep2. where he did a live data analysis on an air pollution dataset. The dataset contains the chemical composition of the air from both normal days and wild fire days.
+Roger Peng is a Professor in the Department of Biostatistics at the John Hopkins Bloomberg School of Public Health. He is also teaching the Data Science Specialization and Computing for Data Analysis course on Coursera.</description>
+    </item>
+    
+    <item>
+      <title>Datascience Beyond an Ipython Notebook</title>
+      <link>/1/01/datascience-beyond-an-ipython-notebook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/datascience-beyond-an-ipython-notebook/</guid>
+      <description>Often in a data competition, participants are only the given dataset(s) as input, and try to output some predictions, classifications or analysis. In a real organization, doing data science also involves challenges outside of doing data analysis. In this blog post, I will present the obstacles I faced when I tried to forecast a computer lab’s desktop usage (which I defined as the number of computers in use every minute during open hours) before I even loaded the correct data on my sweet iPython Notebook.</description>
+    </item>
+    
+    <item>
+      <title>Deep Work Extension (rough rough draft)</title>
+      <link>/1/01/deep-work-extension-rough-rough-draft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/deep-work-extension-rough-rough-draft/</guid>
+      <description>Recap: A while a ago, I read a book called Deepwork. Then I decided to keep track of my studying/work data to improve my focus and productivity.
+New developments: Besides tracking how much time I spend doing what, along with sub-tasks. I also track additional information about a task, such as
+Focus (from 1 to 0): my focus during the time Motivatoin: punishing for low focus or being distracted
+Difficulty (from 1 to 2): the difficulty of the task Motivation: reward more taking on difficult task.</description>
+    </item>
+    
+    <item>
+      <title>Getting Better at Data Analysis 1</title>
+      <link>/1/01/getting-better-at-data-analysis-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/getting-better-at-data-analysis-1/</guid>
+      <description>Working on my Data Analysis project yesterday, I realize my current EDA and Data Analysis project is so inefficient.
+First, I am spending too much time trying to make a particular graph, using a technology(ggplot2) that I am not familiar with. This distracts me from my analysis process. Also in terms of making graphs, I have to get familiar ggplot2, and learn how to make informative graphs. Googling &amp;ldquo;how to make XX using ggplot2&amp;rdquo; is very tedious and inefficient, besides the trial-and-error of making better graphs.</description>
+    </item>
+    
+    <item>
+      <title>Indoor Positioning Research Project</title>
+      <link>/1/01/indoor-positioning-research-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/indoor-positioning-research-project/</guid>
+      <description>1. Introduction This project is about finding the location of an indoor device based on the signal strength it receives from 5 access points.
+2. Data Description Below plot is a map on a building floor, each blue point represents a single data point or device. Signal strengths are measured from 5 access points (orange dots) for the devices. The signal strength from the first access point is in the variable S1, and S2 through S5 are similarly defined.</description>
+    </item>
+    
+    <item>
+      <title>Learning about Lognormal Distribution</title>
+      <link>/1/01/learning-about-lognormal-distribution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/learning-about-lognormal-distribution/</guid>
+      <description>What is a lognormal distribution? From the intuitive perspective, a quantity or variable is likely to be lognormally dsitributed if it often changes by a percentage. For instance, a stock&amp;rsquo;s return could go up by 5% today but decrease by 10% the next day. A lognormally distributed quantity $$Y$$ can be expressed as the cumulative product of many positive, independent numbers, as $$Y = X_1 * X_2 * X_3 &amp;hellip; * X_n$$.</description>
+    </item>
+    
+    <item>
+      <title>Learning how to write from Nate Silver</title>
+      <link>/1/01/learning-how-to-write-from-nate-silver/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/learning-how-to-write-from-nate-silver/</guid>
+      <description>Introduction Signal and the Noise has been one of my favorite books. I had been reading and re-reading this book for almost 4 years. It provides me with many technical insights on making good predictions. But for this course assignment, I have to look at the book from a different perspective:
+1. I analyze the intended audience from different parts of the book.
+2. I also pay close attention to the book&amp;rsquo;s writing styles and extrapolate many Nate Silver&amp;rsquo;s writing techniques.</description>
+    </item>
+    
+    <item>
+      <title>On Reading Data Science Blogs 1: Principles</title>
+      <link>/1/01/on-reading-data-science-blogs-1-principles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/on-reading-data-science-blogs-1-principles/</guid>
+      <description>There are lots of reasons why you read a data science blog, such as procrastinating doing something more important. But you probably relates to this post the most if you read blogs to explore techniques and ideas and on your eternal quest of being a better data scientist.
+This post particularly introduces the two important principles I recall regarding to reading. In the later posts I will cover other aspects of reading data science blogs such as techniques and examples.</description>
+    </item>
+    
+    <item>
+      <title>Proving by induction is sometimes bad</title>
+      <link>/1/01/proving-by-induction-is-sometimes-bad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/proving-by-induction-is-sometimes-bad/</guid>
+      <description>Today in my numerical analysis homework I encounter this problem,
+I think questions like this are bad. Because I think in many real world situations, I won&amp;rsquo;t have the formula that you could do induction on.
+So for that homework problem, I decided to derive the formula from scratch and I did solve it after 2 hours.
+For the easier case, addition/substraction, I expand a few terms from the linear recurrence function(f(n) = n-1 + f(n-1)).</description>
+    </item>
+    
+    <item>
+      <title>Reading Journal</title>
+      <link>/1/01/reading-journal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/reading-journal/</guid>
+      <description>Pushing Reading to the Next Level  When I talk to researchers, when I talk to people wanting to engage in entrepreneurship, I tell them that if you read research papers consistently, if you seriously study half a dozen papers a week and you do that for two years, after those two years you will have learned a lot. This is a fantastic investment in your own long term development.</description>
+    </item>
+    
+    <item>
+      <title>Reading Journal Reflection</title>
+      <link>/1/01/reading-journal-reflection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/reading-journal-reflection/</guid>
+      <description>New Reading Methodologies The book &amp;ldquo;effortless reading&amp;rdquo; I read resonates with my recent journal post on on reading reforms.
+Here is the summary: 这一本书介绍了如何在信息爆炸时代高速度读书。重点内容如下: 1.学会选书.选书就跟选朋友一样要慎重.你要客观的认识自己的优势和现在的社会处境。大多阅读是要抱着寻找解决自己生活上的问题而来的。如果你还在找工作，找实习的话就应该选技术性的书读而不是读如何拯救世界。有了明确的目标后看目录，看看哪一章和你的目标最符合就读那一章。然后在决定书的质量还有如何解决你的问题。 2.反复阅读。书就像朋友一样。我们都应该有150本经常需要翻阅的重要的书。那些书一次，两次等等是根本不够的。 3.概念书籍和行动书籍的平衡。你要根据自己的实际情况考虑自己需要读多点概念的书还是行动的书。有时候如果概念类的书读多了，自己满腔热血但是行动上无从下手就尴尬了。 4.读书如开车，要根据阅读内容调节自己的阅读速度。大多情况那些行动和概念的书都比较易读，但是经典的书或者自传，传记就没那么易读了。
+Althought it is not perfect I do think a few motifications is necessary. But it forces me to focus more on the application side of reading. With the new mindset, and a recent inspriation/desperation, I decide to fight for a challenge.</description>
+    </item>
+    
+    <item>
+      <title>Review To Explain or to Predict</title>
+      <link>/1/01/review-to-explain-or-to-predict/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/review-to-explain-or-to-predict/</guid>
+      <description>Things I have learned(new things I see):
+Content:  Explanatory modeling is more based on theoretical ideas such as theoretical constructs and the operationalization that connects the explanatory construct and dependent construct. Data are only measurements of those constructs. And the end goal of explanatory modeling is to understand the relationships between those constructs. An extreme example would be studying the relationship between intelligence(IQ) and long-term success in life. And a less extreme example is studying the relationship between the percentage of terrains and a country’s GDP, whereas the variables are tangible measurements.</description>
+    </item>
+    
+    <item>
+      <title>Thoughts on 358 Article &#34;Science Isn&#39;t Broken&#34;</title>
+      <link>/1/01/thoughts-on-358-article-science-isnt-broken/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/thoughts-on-358-article-science-isnt-broken/</guid>
+      <description>Summary The article first introduces the concept of p-hacking - researchers could tweak variables in the study or other things to reach the convention 0.05 significant level, in order to get their research published. Then she explains that scientists mildly tweak p-value often because of personal biased or some other incentives, and only a very small portion researchers are actually fabricating data and hack the peer review system.
+Then the author introduces some positive changes in the science self-correction mechanisms - an online blog Retraction Watch that audits other researches, and i other good internet research platform provides frameworks and support for good and open science.</description>
+    </item>
+    
+    <item>
+      <title>Use small/mental data to learn how to focus better</title>
+      <link>/1/01/use-small/mental-data-to-learn-how-to-focus-better/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/use-small/mental-data-to-learn-how-to-focus-better/</guid>
+      <description>The problem: Being able to focus intensely is important for knowledge workers. However, I was often distracted during my studying sessions. Think of studying and being distracted as two different states in a continuous markov chain. Although there is a small rate(probability) of a given moment that I will have the urge to check facebook, email or other sources of distractions, being in the state of distraction at a given moment has a chance of staying distracted.</description>
+    </item>
+    
+    <item>
+      <title>review on 50 Years of Data Science</title>
+      <link>/1/01/review-on-50-years-of-data-science/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/review-on-50-years-of-data-science/</guid>
+      <description>1.I am happy to read about some history of statistics and the development of data analysis(at least in the academia setting). And I learn that sometimes old papers(decades ago) could be an important insight for solving some contemporary problems or giving new directions, such as John Turkey’s paper which proposes the idea of “data analysis” as an extension to traditional statistics.
+2.Seeing the effectiveness of the “Common Task Framework” in the development of various research, I think a potential direction of my Education research could be finding a “good tutoring/teaching practice/research” framework.</description>
+    </item>
+    
+  </channel>
+</rss>

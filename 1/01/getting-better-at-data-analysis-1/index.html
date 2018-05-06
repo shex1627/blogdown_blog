@@ -1,0 +1,739 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.40.2 with theme Tranquilpeak 0.4.3-BETA">
+    <title>Getting Better at Data Analysis 1</title>
+    <meta name="author" content="Shicheng Huang">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+    <meta name="description" content="Working on my Data Analysis project yesterday, I realize my current EDA and Data Analysis project is so inefficient.
+First, I am spending too much time trying to make a particular graph, using a technology(ggplot2) that I am not familiar with. This distracts me from my analysis process. Also in terms of making graphs, I have to get familiar ggplot2, and learn how to make informative graphs. Googling &ldquo;how to make XX using ggplot2&rdquo; is very tedious and inefficient, besides the trial-and-error of making better graphs.">
+    <meta property="og:description" content="Working on my Data Analysis project yesterday, I realize my current EDA and Data Analysis project is so inefficient.
+First, I am spending too much time trying to make a particular graph, using a technology(ggplot2) that I am not familiar with. This distracts me from my analysis process. Also in terms of making graphs, I have to get familiar ggplot2, and learn how to make informative graphs. Googling &ldquo;how to make XX using ggplot2&rdquo; is very tedious and inefficient, besides the trial-and-error of making better graphs.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Getting Better at Data Analysis 1">
+    <meta property="og:url" content="/1/01/getting-better-at-data-analysis-1/">
+    <meta property="og:site_name" content="Hugo tranquilpeak theme">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hugo tranquilpeak theme">
+    <meta name="twitter:description" content="Working on my Data Analysis project yesterday, I realize my current EDA and Data Analysis project is so inefficient.
+First, I am spending too much time trying to make a particular graph, using a technology(ggplot2) that I am not familiar with. This distracts me from my analysis process. Also in terms of making graphs, I have to get familiar ggplot2, and learn how to make informative graphs. Googling &ldquo;how to make XX using ggplot2&rdquo; is very tedious and inefficient, besides the trial-and-error of making better graphs.">
+    
+      <meta name="twitter:creator" content="@shicheng1627">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/279c73a1e7ad9b9a52e1d82f6a219245?s=640">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">Hugo tranquilpeak theme</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/279c73a1e7ad9b9a52e1d82f6a219245?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/279c73a1e7ad9b9a52e1d82f6a219245?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Shicheng Huang</h4>
+        
+          <h5 class="sidebar-profile-bio">生于忧患，死于安乐</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/shex1627">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Getting Better at Data Analysis 1
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="0001-01-01T00:00:00Z">
+        
+  January 1, 1
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>Working on my Data Analysis project yesterday, I realize my current EDA and Data Analysis project is so
+inefficient.</p>
+
+<p>First, I am spending too much time trying to make a particular graph, using a technology(ggplot2) that I am
+not familiar with. This distracts me from my analysis process. Also in terms of making graphs, I have to get
+familiar ggplot2, and learn how to make informative graphs. Googling &ldquo;how to make XX using ggplot2&rdquo; is very
+tedious and inefficient, besides the trial-and-error of making better graphs.</p>
+
+<p>Being good takes hours and hours of deliberate practice. I think there are a few important metric for
+being better at this:</p>
+
+<ol>
+<li>How much I am learning from the best?<br />
+Roger Peng&rsquo;s video is pretty helpful. Maybe I should check datatau more. Also Andrew Ng&rsquo;s course on <em>Structuring
+Machine Learning Project</em> definitely worth a second visit. Reading EfficientR is super good. It taught me many helpful
+technical tips, such as benchmarking. I tested library <em>Tidyverse</em>&rsquo;s <strong>mutate</strong> function on transforming a column,
+it gives me 10x(3s) performance, comparing to using a base R function <strong>sapply</strong>;I also tried compiling the mapping
+function but didn&rsquo;t very little in that case.<br /></li>
+<li>How much time I spent streching my limits? Need to force myself from making poor decisions, such as overspending my
+time on making beautiful plots before finishing my analysis;also need to force myself to learn ggplot2 comprehensively,
+reduce amount of time I have to google to make a plot.<br /></li>
+</ol>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/1/01/deep-work-extension-rough-rough-draft/" data-tooltip="Deep Work Extension (rough rough draft)">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/1/01/indoor-positioning-research-project/" data-tooltip="Indoor Positioning Research Project">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/1/01/getting-better-at-data-analysis-1/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/1/01/getting-better-at-data-analysis-1/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/1/01/getting-better-at-data-analysis-1/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Shicheng Huang. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/1/01/deep-work-extension-rough-rough-draft/" data-tooltip="Deep Work Extension (rough rough draft)">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/1/01/indoor-positioning-research-project/" data-tooltip="Indoor Positioning Research Project">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/1/01/getting-better-at-data-analysis-1/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/1/01/getting-better-at-data-analysis-1/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/1/01/getting-better-at-data-analysis-1/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F1%2F01%2Fgetting-better-at-data-analysis-1%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F1%2F01%2Fgetting-better-at-data-analysis-1%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F1%2F01%2Fgetting-better-at-data-analysis-1%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/279c73a1e7ad9b9a52e1d82f6a219245?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Shicheng Huang</h4>
+    
+      <div id="about-card-bio">生于忧患，死于安乐</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        ML/Data Analysis Intern
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Berkeley, CA, US
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/05/new-blog/">
+                <h3 class="media-heading">new_blog</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">this is a normal distribution.
+hist(rnorm(10000)) </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/1/01/translation-on-reading-books/">
+                <h3 class="media-heading">(Translation) On Reading (Books)</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Reading has to be effective to be worthwhile; positive feedbacks is critical to sustain reading.
+The fact is, most of the people who read for self-improvement, are students or young professionals with under 10 years of working experience. Reading is indeed an expensive activity. (the time you spend reading, you could be hanging out with families, friends, or working on your projects). Thus, reading has a huge opportunity cost even to the motivated readers.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/1/01/backpack-analysis/">
+                <h3 class="media-heading">Backpack Analysis</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">The idea comes up when I forgot my classbinder. And recently I realize I don&rsquo;t really use the books that I carried. So I want to log all the things that I bring when I go out.
+definition go out: leaving home/apartment for more than 1 hour.
+Objectives/Questions to reflect on: 1.do I need to carry &hellip;, do I actually use &hellip;? 2.how do I prepare things in advance? 3.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/1/01/backpack-analysis2-reflection/">
+                <h3 class="media-heading">Backpack Analysis(2)-Reflection</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">01/30/2017
+This is the second morning which I stopped logging my backpack items, and I forgot to bring my binders.I think one of the main benefits of doing so ensures I always have a pencil and pen inside my backpack.
+Today is 02/21/2017
+I am restoring the long abandoned backpack Analysis. The main goal is to avoid missing things when I need them.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/1/01/classes-reflections/">
+                <h3 class="media-heading">Classes Reflections</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Overview This semester is pretty tough! At the beginning I remember I have a mental breakdown almost every week tyring to finish my never ending homework and midterms. At first I really have to crticize myself for having no idea what I am getting into this semester: weak previews. I have underestimated the amount of work I have to do for each class. For the classes I take next semester, I want to at least have a brief overview of what is ahead of me.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/1/01/data-analysis-workflow-guide/">
+                <h3 class="media-heading">Data Analysis Workflow Guide</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Introduction I have compiled a list of good data analysis workflow tips from Professor Roger Peng&rsquo;s Analytic Mind, ep2. where he did a live data analysis on an air pollution dataset. The dataset contains the chemical composition of the air from both normal days and wild fire days.
+Roger Peng is a Professor in the Department of Biostatistics at the John Hopkins Bloomberg School of Public Health. He is also teaching the Data Science Specialization and Computing for Data Analysis course on Coursera.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/1/01/datascience-beyond-an-ipython-notebook/">
+                <h3 class="media-heading">Datascience Beyond an Ipython Notebook</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Often in a data competition, participants are only the given dataset(s) as input, and try to output some predictions, classifications or analysis. In a real organization, doing data science also involves challenges outside of doing data analysis. In this blog post, I will present the obstacles I faced when I tried to forecast a computer lab’s desktop usage (which I defined as the number of computers in use every minute during open hours) before I even loaded the correct data on my sweet iPython Notebook.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/1/01/deep-work-extension-rough-rough-draft/">
+                <h3 class="media-heading">Deep Work Extension (rough rough draft)</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Recap: A while a ago, I read a book called Deepwork. Then I decided to keep track of my studying/work data to improve my focus and productivity.
+New developments: Besides tracking how much time I spend doing what, along with sub-tasks. I also track additional information about a task, such as
+Focus (from 1 to 0): my focus during the time Motivatoin: punishing for low focus or being distracted
+Difficulty (from 1 to 2): the difficulty of the task Motivation: reward more taking on difficult task.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/1/01/getting-better-at-data-analysis-1/">
+                <h3 class="media-heading">Getting Better at Data Analysis 1</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Working on my Data Analysis project yesterday, I realize my current EDA and Data Analysis project is so inefficient.
+First, I am spending too much time trying to make a particular graph, using a technology(ggplot2) that I am not familiar with. This distracts me from my analysis process. Also in terms of making graphs, I have to get familiar ggplot2, and learn how to make informative graphs. Googling &ldquo;how to make XX using ggplot2&rdquo; is very tedious and inefficient, besides the trial-and-error of making better graphs.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/1/01/indoor-positioning-research-project/">
+                <h3 class="media-heading">Indoor Positioning Research Project</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">1. Introduction This project is about finding the location of an indoor device based on the signal strength it receives from 5 access points.
+2. Data Description Below plot is a map on a building floor, each blue point represents a single data point or device. Signal strengths are measured from 5 access points (orange dots) for the devices. The signal strength from the first access point is in the variable S1, and S2 through S5 are similarly defined.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         20 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/1\/01\/getting-better-at-data-analysis-1\/';
+          
+            this.page.identifier = '\/1\/01\/getting-better-at-data-analysis-1\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'shicheng';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+
