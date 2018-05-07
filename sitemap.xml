@@ -3,12 +3,98 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/2018/05/new-blog/</loc>
-    <lastmod>2018-05-05T00:00:00+00:00</lastmod>
+    <loc>/2018/02/datascience-beyond-an-ipython-notebook/</loc>
+    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/1/01/translation-on-reading-books/</loc>
+    <loc>/2018/02/translation-on-reading-books/</loc>
+    <lastmod>2018-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/02/on-reading-data-science-blogs-1-principles/</loc>
+    <lastmod>2018-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/01/deep-work-extension-rough-rough-draft/</loc>
+    <lastmod>2018-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/01/indoor-positioning-research-project/</loc>
+    <lastmod>2018-01-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/12/use-small/mental-data-to-learn-how-to-focus-better/</loc>
+    <lastmod>2017-12-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/12/learning-how-to-write-from-nate-silver/</loc>
+    <lastmod>2017-12-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/11/learning-about-lognormal-distribution/</loc>
+    <lastmod>2017-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/11/proving-by-induction-is-sometimes-bad/</loc>
+    <lastmod>2017-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/09/data-analysis-workflow-guide/</loc>
+    <lastmod>2017-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/09/getting-better-at-data-analysis-1/</loc>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/06/review-on-50-years-of-data-science/</loc>
+    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/05/review-to-explain-or-to-predict/</loc>
+    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/05/thoughts-on-358-article-science-isnt-broken/</loc>
+    <lastmod>2017-05-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/02/backpack-analysis2-reflection/</loc>
+    <lastmod>2017-02-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/02/reading-journal-reflection/</loc>
+    <lastmod>2017-02-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/02/reading-journal/</loc>
+    <lastmod>2017-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/01/backpack-analysis/</loc>
+    <lastmod>2017-01-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2016/12/classes-reflections/</loc>
+    <lastmod>2016-12-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -17,97 +103,25 @@
   </url>
   
   <url>
-    <loc>/1/01/backpack-analysis/</loc>
-  </url>
-  
-  <url>
-    <loc>/1/01/backpack-analysis2-reflection/</loc>
-  </url>
-  
-  <url>
     <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/1/01/classes-reflections/</loc>
-  </url>
-  
-  <url>
-    <loc>/1/01/data-analysis-workflow-guide/</loc>
-  </url>
-  
-  <url>
-    <loc>/1/01/datascience-beyond-an-ipython-notebook/</loc>
-  </url>
-  
-  <url>
-    <loc>/1/01/deep-work-extension-rough-rough-draft/</loc>
-  </url>
-  
-  <url>
-    <loc>/1/01/getting-better-at-data-analysis-1/</loc>
-  </url>
-  
-  <url>
     <loc>/</loc>
-    <lastmod>2018-05-05T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/1/01/indoor-positioning-research-project/</loc>
-  </url>
-  
-  <url>
-    <loc>/1/01/learning-about-lognormal-distribution/</loc>
-  </url>
-  
-  <url>
-    <loc>/1/01/learning-how-to-write-from-nate-silver/</loc>
-  </url>
-  
-  <url>
-    <loc>/1/01/on-reading-data-science-blogs-1-principles/</loc>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-05-05T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/1/01/proving-by-induction-is-sometimes-bad/</loc>
-  </url>
-  
-  <url>
-    <loc>/1/01/reading-journal/</loc>
-  </url>
-  
-  <url>
-    <loc>/1/01/reading-journal-reflection/</loc>
-  </url>
-  
-  <url>
-    <loc>/1/01/review-to-explain-or-to-predict/</loc>
   </url>
   
   <url>
     <loc>/tags/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/1/01/thoughts-on-358-article-science-isnt-broken/</loc>
-  </url>
-  
-  <url>
-    <loc>/1/01/use-small/mental-data-to-learn-how-to-focus-better/</loc>
-  </url>
-  
-  <url>
-    <loc>/1/01/review-on-50-years-of-data-science/</loc>
   </url>
   
 </urlset>
