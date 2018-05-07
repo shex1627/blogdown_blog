@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>OCF Waittime Analysis</title>
+      <link>/2018/05/ocf-waittime-analysis/</link>
+      <pubDate>Sun, 06 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/05/ocf-waittime-analysis/</guid>
+      <description>Introduction I am a volunteer staff member at the Open Computing Facility (OCF) at the University of California, Berkeley, where we provide free computer access to all students. We also let students print a maximum of 10 pages per day and 100 pages per semester.
+As a staff member who spends an average of 7 hours per day in the lab, I often see people waiting for a computer. I wonder if I can get a decent estimate of when people have to wait for a computer.</description>
+    </item>
+    
+    <item>
       <title>Optimizing R Using Microbenchmark</title>
       <link>/2018/05/optimizing-r-using-microbenchmark/</link>
       <pubDate>Sun, 06 May 2018 00:00:00 +0000</pubDate>

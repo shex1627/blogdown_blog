@@ -22,32 +22,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.40.2 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Backpack Analysis(2)-Reflection</title>
+    <title>OCF Waittime Analysis</title>
     <meta name="author" content="Shicheng Huang">
-    <meta name="keywords" content="DataProject,, Analysis">
+    <meta name="keywords" content="">
 
     <link rel="icon" href="/favicon.png">
     
 
     
-    <meta name="description" content="01/30/2017
-This is the second morning which I stopped logging my backpack items, and I forgot to bring my binders.I think one of the main benefits of doing so ensures I always have a pencil and pen inside my backpack.
-Today is 02/21/2017
-I am restoring the long abandoned backpack Analysis. The main goal is to avoid missing things when I need them.">
-    <meta property="og:description" content="01/30/2017
-This is the second morning which I stopped logging my backpack items, and I forgot to bring my binders.I think one of the main benefits of doing so ensures I always have a pencil and pen inside my backpack.
-Today is 02/21/2017
-I am restoring the long abandoned backpack Analysis. The main goal is to avoid missing things when I need them.">
+    <meta name="description" content="Introduction I am a volunteer staff member at the Open Computing Facility (OCF) at the University of California, Berkeley, where we provide free computer access to all students. We also let students print a maximum of 10 pages per day and 100 pages per semester.
+As a staff member who spends an average of 7 hours per day in the lab, I often see people waiting for a computer. I wonder if I can get a decent estimate of when people have to wait for a computer.">
+    <meta property="og:description" content="Introduction I am a volunteer staff member at the Open Computing Facility (OCF) at the University of California, Berkeley, where we provide free computer access to all students. We also let students print a maximum of 10 pages per day and 100 pages per semester.
+As a staff member who spends an average of 7 hours per day in the lab, I often see people waiting for a computer. I wonder if I can get a decent estimate of when people have to wait for a computer.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Backpack Analysis(2)-Reflection">
-    <meta property="og:url" content="/2017/02/backpack-analysis2-reflection/">
+    <meta property="og:title" content="OCF Waittime Analysis">
+    <meta property="og:url" content="/2018/05/ocf-waittime-analysis/">
     <meta property="og:site_name" content="Less Random">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Less Random">
-    <meta name="twitter:description" content="01/30/2017
-This is the second morning which I stopped logging my backpack items, and I forgot to bring my binders.I think one of the main benefits of doing so ensures I always have a pencil and pen inside my backpack.
-Today is 02/21/2017
-I am restoring the long abandoned backpack Analysis. The main goal is to avoid missing things when I need them.">
+    <meta name="twitter:description" content="Introduction I am a volunteer staff member at the Open Computing Facility (OCF) at the University of California, Berkeley, where we provide free computer access to all students. We also let students print a maximum of 10 pages per day and 100 pages per semester.
+As a staff member who spends an average of 7 hours per day in the lab, I often see people waiting for a computer. I wonder if I can get a decent estimate of when people have to wait for a computer.">
     
       <meta name="twitter:creator" content="@shicheng1627">
     
@@ -204,15 +198,15 @@ I am restoring the long abandoned backpack Analysis. The main goal is to avoid m
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Backpack Analysis(2)-Reflection
+      OCF Waittime Analysis
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2017-02-23T00:00:00Z">
+      <time itemprop="datePublished" datetime="2018-05-06T00:00:00Z">
         
-  February 23, 2017
+  May 6, 2018
 
       </time>
     
@@ -223,14 +217,63 @@ I am restoring the long abandoned backpack Analysis. The main goal is to avoid m
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>01/30/2017<br />
-This is the second morning which I stopped logging my backpack items, and I
-forgot to bring my binders.I think one of the main benefits of doing so ensures I always have a pencil
-and pen inside my backpack.</p>
-
-<p>Today is 02/21/2017<br />
-I am restoring the long abandoned backpack Analysis.
-The main goal is to avoid missing things when I need them.</p>
+              <div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>I am a volunteer staff member at the Open Computing Facility (OCF) at the University of California, Berkeley, where we provide free computer access to all students. We also let students print a maximum of 10 pages per day and 100 pages per semester.</p>
+<p>As a staff member who spends an average of 7 hours per day in the lab, I often see people waiting for a computer. I wonder if I can get a decent estimate of when people have to wait for a computer. To break down the question, I first try to estimate the wait time for a single computer. Because I sometimes have to wait for the particular computer at the corner of the lab. In this post, I will explore if I can get a good estimate of when a user will leave given how long he/she has been using a computer.</p>
+</div>
+<div id="session-dataset" class="section level1">
+<h1>Session Dataset</h1>
+<p>The dataset we use is the lab session data from this semester. Below is a snippet of the session data. The field “host” represents each desktop. The field “duration” measures the duration of a session by minutes.</p>
+<p><img src="/post/2018-05-06-ocf-waittime-analysis_files/figure-html/dataset_snippet-1.png" width="672" /></p>
+</div>
+<div id="basic-data-processing" class="section level1">
+<h1>Basic Data processing</h1>
+<p>Here are the procedures I use to clean the data:</p>
+<ol style="list-style-type: decimal">
+<li><p>Exclude all sessions from the volunteer staff because lab volunteer staff members often have longer session durations and login after lab open hours.</p></li>
+<li><p>Exclude sessions that have 0 or negative durations because they are not accurate and extremely rare (6 out of 33k sessions this semester).</p></li>
+<li><p>Exclude sessions from host “blizzard” and “eruption” because they are desktops exclusive to front desk staff members and volunteer staff members.</p></li>
+<li><p>Exclude sessions during the weekends because weekend sessions are often longer than the weekdays’. The table below shows each weekday’s mean and median session duration. The weekends are highlighted.</p></li>
+</ol>
+<p><img src="/post/2018-05-06-ocf-waittime-analysis_files/figure-html/weekend_effect-1.png" width="672" /></p>
+</div>
+<div id="data-adjustments" class="section level1">
+<h1>Data Adjustments</h1>
+<p>There used to be a bug in the lab’s session tracking infrastructure: we could only record a session’s start time at the beginning of the minute (More about the bug from one of my <a href="http://ftdalpha.com/2018/02/20/work-at-ocf-1.html">previous post</a>. For instance, if a session started at 12:<strong>30:45</strong>, it would appear in our data as 12:<strong>31:03</strong>.</p>
+<p>See figure below for the distribution of session start seconds.</p>
+<p><img src="/post/2018-05-06-ocf-waittime-analysis_files/figure-html/start_end_seconds-1.png" width="672" /></p>
+<p>Notice due to the bug, the counts of sessions that “started” at second 1, 2 or 3 are abnormally high, 2 to 10 times higher than seconds 4 to 59. Also because second 4 through 59 all have similar counts, I assume the sessions start second should be uniformly distributed (i.e each second should have 1/60 of the total counts).</p>
+<p>To find out when sessions data was corrupted, I plots the percentage of sessions with “start second” &lt; 4 against time.</p>
+<p><img src="/post/2018-05-06-ocf-waittime-analysis_files/figure-html/corrupted_sessions_plot2-1.png" width="672" /></p>
+<p>As the graph above shows, after Feb 5th, the session tracking system returned to normal again.</p>
+<p>Thus, for all the sessions before 2018-02-05, I adjust the duration by adding <code>$X$</code> seconds, where <code>$X$</code> uniform distribution on the set {0, 1, 2,…55 + <code>$S_{session\,start\,second}$</code>}. For instance, if the session’s recorded start second is 3, given our tracking system was malfunctioning, the real session start time can be any time from 0 to 3 seconds, or 4 to 59 seconds from the previous minute. The actual duration for the inaccurate session data should be somewhere between 0 to 3, or 3 + 55 seconds longer.</p>
+<p>Let’s have a rough look at the difference before and after the adjustment through some summary statistics.<br />
+<img src="/post/2018-05-06-ocf-waittime-analysis_files/figure-html/after_adjustment-1.png" width="672" /></p>
+<p>Overall each quantile and mean is increased by about 15 seconds. This is significant because the wait time of a computer when the lab is full is often under 100 seconds. It is not good to later train a model with 27% of data that is around 15% inaccurate.</p>
+<p>From the summary statistics, we can also see 50% of the sessions are under 6 minutes because many users leave the lab after printing documents. However, sometimes I have to wait for a non-printing user to get the corner computer, making me wonder if I can have a good guess when will that user leave given how long he/she has been there.</p>
+</div>
+<div id="basic-session-survival-analysis" class="section level1">
+<h1>Basic Session Survival Analysis</h1>
+<p>To find how <strong>current session time</strong>, how long a user has been on a computer, impacts the wait time, I first check how the current session time affects the <em>distribution</em> of the <strong>remaining session duration</strong>, how long a user will stay in addition to current session duration.</p>
+<p>As a quick preview, I plot the distribution of session durations for the sessions longer than 0, 5, 10, 15 and 20 min. I choose to plot the distribution of total duration (current + remaining session duration) instead of remaining session duration, so the distributions don’t clump up and become hard for you to distinguish among them.</p>
+</div>
+<div id="expected-wait-time-given-current-session-duration" class="section level1">
+<h1>Expected Wait Time Given Current Session Duration</h1>
+<p><img src="/post/2018-05-06-ocf-waittime-analysis_files/figure-html/different_duration_distributions-1.png" width="672" /></p>
+<p>Notice nearly all distribution have a peak at the beginning. This means that at any given time, sessions have the highest probability (i.e pdf) of leaving within the first few minutes. However, the distribution is getting flatter and flatter as current session time increases. In other words, we are less certain about when a user will leave as he stays in the lab longer.</p>
+<p>To have a more comphrensive understanding of this heuristic, I want to see the the distributions for sessions long than 0, 1, 2,…75 min (75min is almost 96% quantile of all session durations).</p>
+<p>A plot with 75 distributions is very difficult to read. Therefore, instead of plotting all the distributions, I use <strong>current session duration</strong> as X variable, and use q1, q2 and q3 of the <strong>remaining session duration</strong> as Y variables. I also make two plots: one has X ranges from 0 to 25, the other plot has X ranges from 25 to 75.</p>
+<p><img src="/post/2018-05-06-ocf-waittime-analysis_files/figure-html/expected_wait_time_plot_declutter-1.png" width="672" /></p>
+<p>As <strong>current session duration</strong> increases, almost all quantiles increases. This increasing pattern slows down after 25 minutes or so (check the second graph). Also, there is a small dip in the first graph during the first few points, let’s zoom in the first graph and see the part where X is smaller than 5.</p>
+<p><img src="/post/2018-05-06-ocf-waittime-analysis_files/figure-html/dip_on_wait_time_plot-1.png" width="672" /></p>
+<p>We can see the <strong>remaining session time</strong> is lowest at the 2 min mark for both the 25% and 50% quantile. Even for the 75% quantile, the lowest waiting time is when the session is at 1 min mark, instead of 0. Thus, the waiting time conditioned on <strong>current session duration</strong> first experiences a small decrease, then increases rapidly until the 25min mark, then increases slowly afterward. In summary, we should expect users to leave around 2 to 5mins; if somebody has been on a computer for a longer time, don’t expect him or her to leave any time soon.</p>
+<div id="future-directions" class="section level2">
+<h2>Future Directions</h2>
+<p>In part 1, we learn that a majority of the sessions are short. But the distribution of session duration is extremely right skewed with some unreasonable outlier. The longest session from our non-staff users this semester is 9+ hours! We also find that knowing how long a session has been (i.e the current session time) can help us infer how long the session will last additionally (i.e remaining session time). However, this heuristic’s effectiveness will decrease after current session duration exceeds 25 minutes.</p>
+<p>In the next part, I will examine additional variables such as <strong>the computer used</strong>. Students may favor computers closer to the printer; or students may avoid using double monitor computers from the misconception that those computers are for staff members only…</p>
+</div>
+</div>
 
               
             </div>
@@ -246,7 +289,7 @@ The main goal is to avoid missing things when I need them.</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2017/05/thoughts-on-358-article-science-isnt-broken/" data-tooltip="Thoughts on 358 Article &#34;Science Isn&#39;t Broken&#34;">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -254,7 +297,7 @@ The main goal is to avoid missing things when I need them.</p>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/reading-journal-reflection/" data-tooltip="Reading Journal Reflection">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/optimizing-r-using-microbenchmark/" data-tooltip="Optimizing R Using Microbenchmark">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -272,19 +315,19 @@ The main goal is to avoid missing things when I need them.</p>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2017/02/backpack-analysis2-reflection/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2018/05/ocf-waittime-analysis/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2017/02/backpack-analysis2-reflection/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2018/05/ocf-waittime-analysis/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2017/02/backpack-analysis2-reflection/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2018/05/ocf-waittime-analysis/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -332,7 +375,7 @@ The main goal is to avoid missing things when I need them.</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2017/05/thoughts-on-358-article-science-isnt-broken/" data-tooltip="Thoughts on 358 Article &#34;Science Isn&#39;t Broken&#34;">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -340,7 +383,7 @@ The main goal is to avoid missing things when I need them.</p>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/reading-journal-reflection/" data-tooltip="Reading Journal Reflection">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/optimizing-r-using-microbenchmark/" data-tooltip="Optimizing R Using Microbenchmark">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -358,19 +401,19 @@ The main goal is to avoid missing things when I need them.</p>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2017/02/backpack-analysis2-reflection/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2018/05/ocf-waittime-analysis/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2017/02/backpack-analysis2-reflection/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2018/05/ocf-waittime-analysis/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2017/02/backpack-analysis2-reflection/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2018/05/ocf-waittime-analysis/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -400,19 +443,19 @@ The main goal is to avoid missing things when I need them.</p>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2017%2F02%2Fbackpack-analysis2-reflection%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2018%2F05%2Focf-waittime-analysis%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2017%2F02%2Fbackpack-analysis2-reflection%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2018%2F05%2Focf-waittime-analysis%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2017%2F02%2Fbackpack-analysis2-reflection%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2018%2F05%2Focf-waittime-analysis%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -699,9 +742,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = '\/2017\/02\/backpack-analysis2-reflection\/';
+          this.page.url = '\/2018\/05\/ocf-waittime-analysis\/';
           
-            this.page.identifier = '\/2017\/02\/backpack-analysis2-reflection\/'
+            this.page.identifier = '\/2018\/05\/ocf-waittime-analysis\/'
           
         };
         (function() {
