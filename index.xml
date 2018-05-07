@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo tranquilpeak theme</title>
+    <title>Less Random</title>
     <link>/</link>
-    <description>Recent content on Hugo tranquilpeak theme</description>
+    <description>Recent content on Less Random</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 06 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Optimizing R Using Microbenchmark</title>
+      <link>/2018/05/optimizing-r-using-microbenchmark/</link>
+      <pubDate>Sun, 06 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/05/optimizing-r-using-microbenchmark/</guid>
+      <description>Why microbenchmark Microbenchmark is an R package that allows you to measure the run time of a small block of code (mostly a function run). The most important use of this package is to compare the run time of different functions/algorithms that do the same or similar things.
+Here are three common use cases that I find:
+To find the fastest implementation of a function. R is not fantastic in speed so it is important to keep your algorithms optimized.</description>
+    </item>
     
     <item>
       <title>Datascience Beyond an Ipython Notebook</title>
